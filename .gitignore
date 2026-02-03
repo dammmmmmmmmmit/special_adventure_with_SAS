@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv
+*.egg-info/
+.eggs/
+
+# Environment files (IMPORTANT: Keep API keys secret!)
+.env
+.env.local
+.env.production
+.env*.local
+backend/.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-*
+
+# Logs
+*.log
+azure_stt.log
+
+# Audio files (for testing)
+*.wav
+*.mp3
+*.pcm
+
+# Node modules (if using npm for frontend)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test files (optional - remove if you want to include tests)
+# test_*.py
