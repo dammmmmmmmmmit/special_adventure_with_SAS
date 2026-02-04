@@ -102,8 +102,13 @@ class AudioMessageHandler:
             
             if msg_type == "audio":
                 self.audio_chunks_received += 1
-                # Convert audio data back to bytes
-                audio_bytes = bytes(data.get("data", []))
+                # Convert Int16 audio data to bytes
+                # The frontend sends Int16 values as a JSON array
+                raw_data = data.get("data", [])
+                
+                # Convert Int16 array to bytes (little-endian)
+                import struct
+                audio_bytes = struct.pack(f'<{len(raw_data)}h', *raw_data)
                 
                 # Log every 10th chunk to avoid spam
                 if self.audio_chunks_received % 10 == 0:
